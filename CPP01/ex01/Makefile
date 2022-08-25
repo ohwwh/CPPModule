@@ -10,20 +10,17 @@
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++ -std=c++98
-CFLAGS = -Wall -Wextra -Werror
-NAME=megaphone
-SRCSDIR=./
+CXX=c++ -std=c++98
+CFLAGS=-Wall -Wextra -Werror
+NAME=phonebook
 INCS=./
-SRCS=megaphone.cpp
+SRCS=Contact.cpp main.cpp PhoneBook.cpp
 OBJS=${SRCS:.cpp=.o}
-
-.PHONY: all clean fclean re
 
 all : $(NAME)
 
-$(OBJS): $(SRCS)
-	$(CC) $(CFLAGS) -c $(SRCS)
+$(NAME) : $(OBJS)
+	$(CXX) $(CFLAGS) -o $(NAME) $(OBJS) -I$(INCS)
 
 clean:
 	rm -f $(OBJS)
@@ -32,3 +29,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

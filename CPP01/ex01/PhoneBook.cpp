@@ -10,8 +10,30 @@ void PhoneBook::add(Contact newContact){
 		array[number ++] = newContact;
 	else
 	{
-		array[(oldest % 8)] = newContact;
-		oldest ++;
+		array[oldest] = newContact;
+		oldest = (oldest + 1) % 8;
 	}
+}
+
+void PhoneBook::search(int index)
+{
+	if (index > number)
+		std::cout << "out of range!!" << std::endl;
+	else if (index > 0)
+	{
+		std::cout.width(10);
+		std::cout << index << " | ";
+		array[index - 1].showContact();
+	}
+	else if (!index)
+	{
+		for (int i = 0; i < number; i ++)
+		{
+			std::cout.width(10);
+			std::cout << i + 1 << " | ";
+			array[i].showContact();
+		}
+	}
+	//std::cin.ignore();
 }
 

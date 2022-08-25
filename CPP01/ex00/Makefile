@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++ -std=c++98
+CXX = c++ -std=c++98
 CFLAGS = -Wall -Wextra -Werror
 NAME=megaphone
 SRCSDIR=./
@@ -22,8 +22,11 @@ OBJS=${SRCS:.cpp=.o}
 
 all : $(NAME)
 
-$(OBJS): $(SRCS)
-	$(CC) $(CFLAGS) -c $(SRCS)
+#$(OBJS): $(SRCS)
+#	$(CXX) $(CFLAGS) -c $(SRCS)
+
+$(NAME) : $(OBJS)
+	$(CXX) $(CFLAGS) -o $(OBJS) -I$(INCS)
 
 clean:
 	rm -f $(OBJS)
