@@ -6,15 +6,15 @@
 #    By: hoh <hoh@student.42.kr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/23 02:36:10 by ohw               #+#    #+#              #
-#    Updated: 2022/08/20 16:46:29 by hoh              ###   ########.fr        #
+#    Updated: 2022/08/25 22:08:58 by hoh              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX=c++ -std=c++98
 CFLAGS=-Wall -Wextra -Werror
-NAME=phonebook
+NAME=zombie
 INCS=./
-SRCS=Contact.cpp main.cpp PhoneBook.cpp
+SRCS=main.cpp zombieHorde.cpp Zombie.cpp
 OBJS=${SRCS:.cpp=.o}
 
 all : $(NAME)
