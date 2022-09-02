@@ -24,14 +24,10 @@ void Contact::new_Contact(std::string fn, std::string ln, std::string nn, std::s
 	secret = sec;
 }
 void Contact::showContact(){
-	std::cout.width(10);
-	std::cout << truncate(firstname) << " | ";
+	std::cout << std::setw(10) << truncate(firstname) << " | ";
 	std::cout.width(10);
 	std::cout << truncate(lastname) << " | ";
 	std::cout.width(10);
 	std::cout << truncate(nickname) << " | ";
-	std::cout.width(10);
-	std::cout << truncate(number) << std::endl;
-	/*std::cout.width(10);
-	std::cout << truncate(secret) << "\n";*/
+	std::cout << std::setw(10) << truncate(number) << std::endl;
 }

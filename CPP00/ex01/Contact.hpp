@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 class Contact{
 	std::string firstname, lastname, nickname, number, secret;

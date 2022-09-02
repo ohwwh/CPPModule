@@ -7,7 +7,6 @@ int main(int argc, char *argv[])
 	std::string fn, ln, nn, num, sec, command;
 	int index;
 
-	std::cin >> index;
 	//std::cin >> sec; space 단위로 단어를 짤라서 입력받음.
 	while (1)
 	{
@@ -37,7 +36,7 @@ int main(int argc, char *argv[])
 				if (!(std::cin >> index))
 				{
 					std::cin.clear();
-					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //일반적인 경우 어떻게 무시를 해야 할까
+					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 					break ;
 				}
 				else if (index < 0)

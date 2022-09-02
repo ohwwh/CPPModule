@@ -1,22 +1,18 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed(){
-	std::cout << "Default constructor called" << std::endl;
 	raw_bit = 0;
 }
 
 Fixed::Fixed(const Fixed& fP){
-	std::cout << "Copy constructor called" << std::endl;
 	*this = fP;
 }
 
 Fixed::Fixed(const int num){
-	std::cout << "Int constructor called" << std::endl;
 	raw_bit = num << frac_bit;
 }
 
 Fixed::Fixed(const float num){
-	std::cout << "Float constructor called" << std::endl;
 	raw_bit = (int)roundf(num * (1 << frac_bit));
 }
 
@@ -24,7 +20,6 @@ Fixed::Fixed(const float num){
 
 Fixed& Fixed::operator=(const Fixed& fP)
 {
-	std::cout << "Copy assignment Fixed::operator called" << std::endl;
 	raw_bit = fP.raw_bit;
 	return (*this);
 }
@@ -114,16 +109,13 @@ const Fixed& Fixed::max(const Fixed& a, const Fixed& b){
 
 
 Fixed::~Fixed(){
-	std::cout << "Destructor called" << std::endl;
 }
 
 int Fixed::getRawBits(void) const{
-	std::cout << "getRawBits member function called" << std::endl;
 	return (raw_bit);
 }
 
 void Fixed::setRawBits(int const raw){
-	std::cout << "setRawBits member function called" << std::endl;
 	raw_bit = raw;
 }
 
