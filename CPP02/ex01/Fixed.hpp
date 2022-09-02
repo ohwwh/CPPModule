@@ -1,8 +1,9 @@
 #include <iostream>
+#include <cmath>
 
 class Fixed{
-	int number;
-	static const int bit = 8;
+	int raw_bit;
+	static const int frac_bit = 8;
 
 	public:
 		Fixed();
@@ -13,4 +14,8 @@ class Fixed{
 		~Fixed();
 		int	getRawBits(void) const;
 		void setRawBits(int const raw);
+		float toFloat(void) const;
+		int toInt(void) const;
 };
+
+std::ostream& operator<<(std::ostream& os, const Fixed& fP);

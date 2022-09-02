@@ -1,8 +1,8 @@
 #include <iostream>
 
 class Fixed{
-	int number;
-	static const int bit = 8;
+	int raw_bit;
+	static const int frac_bit = 8;
 
 	public:
 		Fixed();
