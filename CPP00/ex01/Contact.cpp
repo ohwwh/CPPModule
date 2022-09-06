@@ -4,6 +4,7 @@ std::string truncate(std::string str)
 {
 	if (str.length() > 10)
 		str.resize(10);
+	str[9] = '.';
 	return (str);
 }
 
@@ -29,5 +30,13 @@ void Contact::showContact(){
 	std::cout << truncate(lastname) << " | ";
 	std::cout.width(10);
 	std::cout << truncate(nickname) << " | ";
-	std::cout << std::setw(10) << truncate(number) << std::endl;
+	std::cout << std::setw(10) << truncate(number) <<" | " << std::endl;
+}
+
+void Contact::showContact_all(){
+	std::cout << "First name: " << firstname << "\n";
+	std::cout << "Last name: " << lastname << "\n";
+	std::cout << "Nickname: " << nickname << "\n";
+	std::cout << "Number: " << number << "\n";
+	std::cout << "Darkest secret: "  << secret << "\n";
 }

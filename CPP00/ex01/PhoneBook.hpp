@@ -9,4 +9,5 @@ class PhoneBook{
 		PhoneBook();
 		void add(Contact newContact);
 		void search(int index);
+		void show();
 };

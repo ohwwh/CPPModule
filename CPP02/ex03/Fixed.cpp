@@ -119,6 +119,14 @@ void Fixed::setRawBits(int const raw){
 	raw_bit = raw;
 }
 
+void Fixed::setBits(int const num){
+	raw_bit = num << frac_bit;
+}
+
+void Fixed::setBits(const float num){
+	raw_bit = (int)roundf(num * (1 << frac_bit));
+}
+
 float Fixed::toFloat(void) const{
 	return ((float)raw_bit / (1 << frac_bit));
 }

@@ -1,5 +1,12 @@
 #include "PhoneBook.hpp"
 
+std::string upString(std::string str){
+	const int l = str.length();
+	for (int j = 0; j < l; j ++)
+		str[j] = std::toupper(str[j]);
+	return (str);
+}
+
 int main(int argc, char *argv[])
 {
 	Contact con;
@@ -12,7 +19,8 @@ int main(int argc, char *argv[])
 	{
 		std::cout << "Command: ";
 		std::getline(std::cin, command);
-		if (!command.compare("add"))
+		command = upString(command);
+		if (!command.compare("ADD")) //대문자로 바꿔
 		{
 			std::cout << "Firstname: ";
 			std::getline(std::cin, fn);
@@ -25,31 +33,24 @@ int main(int argc, char *argv[])
 			std::cout << "Secret: ";
 			std::getline(std::cin, sec);
 			con.new_Contact(fn, ln, nn, num, sec);
-			phonebook.add(con); //객체는 참조타입이 아니다. C++에서는 참조타입 원시타입 구분이 따로 없고 모두 원시타입이며, 포인터타입과 포인터가 아닌 타입(원시타입)으로 나뉨
-			std::cout << "New Contact successfully added to the PhoneBook!" << std::endl;
+			phonebook.add(con);
+			std::cout << "New Contact is successfully added to the PhoneBook!" << std::endl;
 		}
-		else if (!command.compare("search"))
+		else if (!command.compare("SEARCH"))
 		{
-			while (1)
+			phonebook.show();
+			std::cout << "Index: ";
+			if (!(std::cin >> index))
 			{
-				std::cout << "Index: ";
-				if (!(std::cin >> index))
-				{
-					std::cin.clear();
-					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-					break ;
-				}
-				else if (index < 0)
-				{
-					std::cin.ignore();
-					break ;
-				}
-				else if (index >= 0)
-					phonebook.search(index);
-				std::cin.ignore();
+				std::cout << "Invalid: Index number should be a number\n";
+				std::cin.clear();
 			}
+			else
+				phonebook.search(index);
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			//이건 왜? cin은 공백이나 개행 전까지만 입력받고 나머지를 버퍼에 남기는데, 이걸 그 다음 getline이 읽어버린다. 따라서 ignore해야 함
 		}
-		else if (!command.compare("exit"))
+		else if (!command.compare("EXIT"))
 			return (1);
 		else
 			std::cout << "Undefined Command: Type again" << std::endl;
