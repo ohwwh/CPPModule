@@ -4,7 +4,12 @@
 #include "FragTrap.hpp"
 
 class DiamondTrap : public ScavTrap, public FragTrap{
-	
+	std::string Name;
+	public:
+		DiamondTrap();
+		DiamondTrap(const DiamondTrap& ct);
+		DiamondTrap& operator=(const DiamondTrap& ct);
+		~DiamondTrap();
 };
 
 #endif
