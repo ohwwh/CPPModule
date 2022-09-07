@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <regex>
 
 void	ft_replace(std::string& s, const std::string& s1, const std::string& s2)
 {

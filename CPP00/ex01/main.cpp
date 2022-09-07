@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 		std::cout << "Command: ";
 		std::getline(std::cin, command);
 		command = upString(command);
-		if (!command.compare("ADD")) //대문자로 바꿔
+		if (!command.compare("ADD"))
 		{
 			std::cout << "Firstname: ";
 			std::getline(std::cin, fn);

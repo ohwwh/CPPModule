@@ -1,6 +1,6 @@
+#ifndef HARL_H
+#define HARL_H
 #include <iostream>
-#include <vector>
-#include <map>
 
 class Harl{
 	void (Harl::*ptr[4])(void);
@@ -13,3 +13,5 @@ class Harl{
 		Harl();
 		void complain(std::string level);
 };
+
+#endif
