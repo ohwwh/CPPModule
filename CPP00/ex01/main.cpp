@@ -19,22 +19,39 @@ int main(int argc, char *argv[])
 	{
 		std::cout << "Command: ";
 		std::getline(std::cin, command);
+		if (std::cin.eof())
+			return (1);
 		command = upString(command);
 		if (!command.compare("ADD"))
 		{
 			std::cout << "Firstname: ";
 			std::getline(std::cin, fn);
+			if (std::cin.eof())
+				return (1);
 			std::cout << "Lastname: ";
+			if (std::cin.eof())
+				return (1);
 			std::getline(std::cin, ln);
 			std::cout << "Nickname: ";
 			std::getline(std::cin, nn);
+			if (std::cin.eof())
+				return (1);
 			std::cout << "Number: ";
 			std::getline(std::cin, num);
+			if (std::cin.eof())
+				return (1);
 			std::cout << "Secret: ";
 			std::getline(std::cin, sec);
-			con.new_Contact(fn, ln, nn, num, sec);
-			phonebook.add(con);
-			std::cout << "New Contact is successfully added to the PhoneBook!" << std::endl;
+			if (std::cin.eof())
+				return (1);
+			if (fn.empty() || ln.empty() || nn.empty() || num.empty() || sec.empty())
+				std::cout << "There shouldn't be empty space in any field\n";
+			else
+			{
+				con.new_Contact(fn, ln, nn, num, sec);
+				phonebook.add(con);
+				std::cout << "New Contact is successfully added to the PhoneBook!" << std::endl;
+			}
 		}
 		else if (!command.compare("SEARCH"))
 		{
@@ -42,6 +59,8 @@ int main(int argc, char *argv[])
 			std::cout << "Index: ";
 			if (!(std::cin >> index))
 			{
+				if (std::cin.eof())
+					return (1);
 				std::cout << "Invalid: Index number should be a number\n";
 				std::cin.clear();
 			}

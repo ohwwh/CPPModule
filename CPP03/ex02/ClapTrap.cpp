@@ -7,7 +7,7 @@ ClapTrap::ClapTrap(){
 	hp_max = hp;
 	ep_max = ep;
 	damage = 0;
-	std::cout << Name << " is created\n";
+	std::cout << "ClapTrap "<< Name << " is created\n";
 }
 ClapTrap::ClapTrap(const ClapTrap& ct){
 	*this = ct;
@@ -19,11 +19,11 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& ct){
 	hp_max = ct.hp_max;
 	ep_max = ct.ep_max;
 	damage = ct.damage;
-	std::cout << Name << " is created from " << ct.Name << "\n";
+	std::cout << "ClapTrap " << Name << " is created from " << ct.Name << "\n";
 	return (*this);
 }
 ClapTrap::~ClapTrap(){
-	std::cout << Name << " is destroyed\n";
+	std::cout << "ClapTrap " << Name << " is destroyed\n";
 }
 
 ClapTrap::ClapTrap(std::string name){
@@ -33,7 +33,7 @@ ClapTrap::ClapTrap(std::string name){
 	hp_max = hp;
 	ep_max = ep;
 	damage = 0;
-	std::cout << Name << " is created!!\n";
+	std::cout << "ClapTrap " << Name << " is created!!\n";
 }
 
 void ClapTrap::attack(const std::string& target){

@@ -1,9 +1,9 @@
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main()
 {
-	ClapTrap CT;
-	ClapTrap CT2(CT);
+	FragTrap CT;
+	FragTrap CT2(CT);
 	for (int i = 0; i < 4; i++)
 		CT.attack("Bandit");
 	CT.takeDamage(9);
@@ -14,7 +14,9 @@ int main()
 	CT.takeDamage(9);
 	CT.beRepaired(1);
 	CT.attack("Bandit");
-	ClapTrap CT3 = CT;
+	FragTrap CT3 = CT;
 	CT.takeDamage(9);
 	CT3.takeDamage(9);
+	CT.highFiveGuys();
+	ClapTrap ST;
 }

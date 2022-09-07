@@ -6,15 +6,15 @@
 #    By: hoh <hoh@student.42.kr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/23 02:36:10 by ohw               #+#    #+#              #
-#    Updated: 2022/09/07 14:03:52 by hoh              ###   ########.fr        #
+#    Updated: 2022/09/07 15:16:42 by hoh              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX=c++
 CFLAGS=-Wall -Wextra -Werror -std=c++98
-NAME=scavtrap
+NAME=fragtrap
 INCS=./
-SRCS=main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS=main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJS=${SRCS:.cpp=.o}
 
 all : $(NAME)

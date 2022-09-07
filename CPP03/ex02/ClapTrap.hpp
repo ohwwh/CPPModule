@@ -3,12 +3,13 @@
 #include <iostream>
 
 class ClapTrap {
-	std::string Name;
-	int	hp;
-	int ep;
-	int hp_max;
-	int ep_max;
-	int damage;
+	protected:
+		std::string Name;
+		int	hp;
+		int ep;
+		int hp_max;
+		int ep_max;
+		int damage;
 	public:
 		ClapTrap();
 		ClapTrap(const ClapTrap& ct);
