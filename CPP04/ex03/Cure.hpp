@@ -9,11 +9,11 @@ public:
 	Cure();
 	Cure(const Cure& a);
 	Cure& operator=(const Cure& a);
-	virtual ~Cure();
+	~Cure();
 
 	Cure(std::string const & type);
 	std::string const & getType() const; //Returns the materia type
-	Cure* clone() const = 0;
+	Cure* clone() const;
 	void use(ICharacter& target);
 };
 

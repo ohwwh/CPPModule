@@ -16,3 +16,7 @@ Animal& Animal::operator=(const Animal& a){
 Animal::~Animal(){
 	std::cout << "Animal is destroyed" << std::endl;
 }
+
+std::string Animal::getType() const{
+	return (type);
+}
