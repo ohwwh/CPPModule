@@ -1,8 +1,7 @@
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(){
+DiamondTrap::DiamondTrap() : ClapTrap("DMD-99_clap_name"){
 	Name = "DMD-99";
-	ClapTrap::Name = Name + "_clap_name";
 	hp = 100;
 	ep = 50;
 	hp_max = hp;
@@ -29,9 +28,8 @@ DiamondTrap::~DiamondTrap(){
 }
 
 
-DiamondTrap::DiamondTrap(std::string name){
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"){
 	Name = name;
-	ClapTrap::Name = Name + "_clap_name";
 	hp = 100;
 	ep = 50;
 	hp_max = hp;
