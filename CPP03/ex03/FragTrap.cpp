@@ -3,10 +3,10 @@
 FragTrap::FragTrap(){
 	Name = "FRG-59";
 	hp = 100;
-	ep = 50;
+	ep = 100;
 	hp_max = hp;
 	ep_max = ep;
-	damage = 20;
+	damage = 30;
 	std::cout << "FragTrap " << Name << " is created\n";
 }
 FragTrap::FragTrap(const FragTrap& ct){
@@ -38,5 +38,16 @@ FragTrap::FragTrap(std::string name){
 }
 
 void FragTrap::highFiveGuys(void){
-	std::cout << Name << ": high five!!\n";
+	std::cout << "FragTrap: " << Name << ": high five!!\n";
+}
+
+void FragTrap::attack(const std::string& target){
+	if (ep > 0 && hp > 0){
+		std::cout << "FragTrap: " << Name << " attacks " << target << ", causing " << damage << " points of damage\n";
+		ep --;
+	}
+	else if (hp <= 0)
+		std::cout << "attack: He is broken......\n";
+	else if (ep <= 0)
+		std::cout << "attack: not enough ep\n";
 }

@@ -33,8 +33,6 @@ int main(void){
 	delete bob;
 	delete me;
 	delete src;
-	tmp2 = src->createMateria("ice");
-	system("leaks finalfantasy");
 	
 	return 0;
 }

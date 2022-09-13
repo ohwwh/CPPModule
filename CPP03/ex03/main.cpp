@@ -1,9 +1,9 @@
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main()
 {
-	FragTrap CT;
-	FragTrap CT2(CT);
+	DiamondTrap CT;
+	DiamondTrap CT2(CT);
 	for (int i = 0; i < 4; i++)
 		CT.attack("Bandit");
 	CT.takeDamage(9);
@@ -14,9 +14,11 @@ int main()
 	CT.takeDamage(9);
 	CT.beRepaired(1);
 	CT.attack("Bandit");
-	FragTrap CT3 = CT;
+	DiamondTrap CT3 = CT;
 	CT.takeDamage(9);
 	CT3.takeDamage(9);
+	CT.guardGate();
 	CT.highFiveGuys();
+	CT.whoAmI();
 	ClapTrap ST;
 }

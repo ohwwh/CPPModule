@@ -69,7 +69,7 @@ void Character::equip(AMateria* m){
 		}
 	}
 	std::cout << "slot is full\n";
-	delete m;
+	//delete m;
 }
 
 void Character::unequip(int idx){
