@@ -18,7 +18,7 @@ int main(void){
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
-	me->equip(tmp);
+	me->equip(tmp); // slot is full - 현재 tmp의 행방은??
 	me->unequip(0);
 	me->unequip(1);
 	me->unequip(2);
