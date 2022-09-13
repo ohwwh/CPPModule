@@ -9,6 +9,7 @@ int main(void){
 	src->learnMateria(new Cure());
 	ICharacter* me = new Character("me");
 	AMateria* tmp;
+	AMateria* tmp2;
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
@@ -32,6 +33,8 @@ int main(void){
 	delete bob;
 	delete me;
 	delete src;
+	tmp2 = src->createMateria("ice");
 	system("leaks finalfantasy");
+	
 	return 0;
 }
