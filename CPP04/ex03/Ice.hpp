@@ -1,7 +1,7 @@
 #ifndef ICE_HPP
 #define ICE_HPP
 #include <iostream>
-#include "ICharacter.hpp"
+#include "AMateria.hpp"
 
 class Ice : public AMateria{
 protected:
@@ -11,7 +11,6 @@ public:
 	Ice& operator=(const Ice& a);
 	~Ice();
 
-	std::string const & getType() const; //Returns the materia type
 	Ice* clone() const;
 	void use(ICharacter& target);
 };

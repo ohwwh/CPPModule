@@ -1,8 +1,9 @@
-#include "ICharacter.hpp"
+#include "AMateria.hpp"
 
-class Character : ICharacter{
+class Character : public ICharacter{
 	std::string _name;
 	AMateria* slot[4];
+	AMateria* inventory[4];
 	public:
 		Character();
 		Character(const Character& c);
@@ -14,4 +15,5 @@ class Character : ICharacter{
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
+		void clear_inventory(void);
 };

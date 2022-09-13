@@ -25,10 +25,15 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& c){
 		else
 			slot[i] = c.slot[i]->clone();
 	}
+	return (*this);
 }
 MateriaSource::~MateriaSource(){
-	for (int i = 0; i < 4; i ++)
-		slot[i] = 0;
+	for (int i = 0; i < 4; i ++){
+		if (slot[i]){
+			delete slot[i];
+			slot[i] = 0;
+		}
+	}
 }
 
 void MateriaSource::learnMateria(AMateria* m){
@@ -45,9 +50,12 @@ void MateriaSource::learnMateria(AMateria* m){
 AMateria* MateriaSource::createMateria(std::string const & type){
 	for (int i = 0; i < 4; i ++)
 	{
-		if (slot[i]->getType() == type)
+		if (slot[i] && slot[i]->getType() == type)
 			return (slot[i]->clone());
-		if (i == 3)
+		if (i == 3){
 			std::cout << "No such Materia\n";
+			return (0);
+		}
 	}
+	return (0);
 }

@@ -8,11 +8,10 @@ Ice::Ice(const Ice& a){
 }
 Ice& Ice::operator=(const Ice& a){
 	type = a.type;
+	return (*this);
 }
 Ice::~Ice(){}
-std::string const & Ice::getType() const{
-	return (type);
-}
+
 Ice* Ice::clone() const{
 	Ice* ret = new Ice();
 	return (ret);

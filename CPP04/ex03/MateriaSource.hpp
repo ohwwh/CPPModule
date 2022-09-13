@@ -1,6 +1,6 @@
 #include "IMateriaSource.hpp"
 
-class MateriaSource : IMateriaSource
+class MateriaSource : public IMateriaSource
 {
 	AMateria* slot[4];
 	public:
