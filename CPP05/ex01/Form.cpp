@@ -1,18 +1,18 @@
 #include "Form.hpp"
 
 const char* Form::gradeTooHighException::what(void) const throw(){
-	return ("Form: grade is too high\n");
+	return ("Form grade is too high\n");
 }
 
 const char* Form::gradeTooLowException::what(void) const throw(){
-	return ("Form: grade is too low\n");
+	return ("Form grade is too low\n");
 }
 
 Form::Form() : name("default"), sign(false), grade(150){}
 
 Form::Form(const Form& b) : name(b.name), sign(false), grade(b.grade){}
 
-//Form& Form::operator=(const Form& b){}
+Form& Form::operator=(const Form& b){ return (*this);}
 
 Form::~Form(){}
 
@@ -37,7 +37,7 @@ bool Form::getSign() const{
 
 void Form::beSigned(const Bureaucrat& b){
 	if (b.getGrade() > grade)
-		throw gradeTooLowException();
+		throw gradeTooHighException();
 	else
 		sign = true;
 }

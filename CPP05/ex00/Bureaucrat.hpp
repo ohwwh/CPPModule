@@ -5,6 +5,7 @@
 class Bureaucrat{
 	const std::string name;
 	int grade;
+	Bureaucrat& operator=(const Bureaucrat& b);
 	public:
 		class gradeTooHighException : public std::exception{
 			public:
@@ -17,14 +18,15 @@ class Bureaucrat{
 		};
 		Bureaucrat();
 		Bureaucrat(const Bureaucrat& b);
-		Bureaucrat& operator=(const Bureaucrat& b);
 		~Bureaucrat();
 
 		Bureaucrat(const std::string name, int grade);
 		const std::string getName() const;
 		int getGrade() const;
 		void promotion();
+		void try_promotion();
 		void relagation();
+		void try_relagation();
 };
 
 std::ostream& operator<<(std::ostream& o, const Bureaucrat& b);

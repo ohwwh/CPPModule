@@ -6,15 +6,15 @@
 #    By: hoh <hoh@student.42.kr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/23 02:36:10 by ohw               #+#    #+#              #
-#    Updated: 2022/09/13 21:41:37 by hoh              ###   ########.fr        #
+#    Updated: 2022/09/15 21:59:51 by hoh              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX=c++
 CFLAGS=-Wall -Wextra -Werror -std=c++98
-NAME=bureau
+NAME=form
 INCS=./
-SRCS=main.cpp Bureaucrat.cpp
+SRCS=main.cpp Bureaucrat.cpp Form.cpp
 OBJS=${SRCS:.cpp=.o}
 
 all : $(NAME)

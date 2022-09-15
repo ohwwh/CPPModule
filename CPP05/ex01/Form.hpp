@@ -6,6 +6,7 @@ class Form{
 	const std::string name;
 	bool sign;
 	const int grade;
+	Form& operator=(const Form& b);
 	public:
 		class gradeTooHighException : public std::exception{
 			public:
@@ -18,7 +19,6 @@ class Form{
 		};
 		Form();
 		Form(const Form& b);
-		Form& operator=(const Form& b);
 		~Form();
 
 		Form(const std::string name, int grade);
