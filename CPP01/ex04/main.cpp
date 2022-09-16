@@ -1,7 +1,8 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
 
-void	ft_replace(std::string& s, const std::string& s1, const std::string& s2)
+void ft_replace(std::string& s, const std::string& s1, const std::string& s2)
 {
 	int	index;
 	const int	len1 = s1.length();
@@ -24,23 +25,32 @@ int main(int argc, char *argv[]){
 	/*std::ifstream in;
 	in.open(argv[1]);*/
 	std::ifstream in(argv[1]);
+	std::string file = argv[1];
+	file = file + ".replace";
 	std::string s;
 	std::string s1 = argv[2];
+	std::cout << s1 << std::endl;
 	std::string s2 = argv[3];
+	std::stringstream ss;
 	if (!in.is_open())
 	{
 		std::cerr << "File reading has failed" << std::endl;
 		return (0);
 	}
-	in.seekg(0, std::ios::end);
+	/*in.seekg(0, std::ios::end);
 	//in.seekg(0, in.end);
 	const int size = in.tellg();
 	s.resize(size);
 	in.seekg(0, std::ios::beg);
 	//in.seekg(0, in.beg);
-	in.read(&s[0], size);
+	in.read(&s[0], size);*/
+	ss << in.rdbuf();
+	s = ss.str();
+	in.close();
 	std::cout << s << std::endl;
 	ft_replace(s, s1, s2);
+	std::ofstream out(file);
 	std::cout << s << std::endl;
+	out << s;
 	return (0);
 }

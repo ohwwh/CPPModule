@@ -1,23 +1,22 @@
 #include <iostream>
 
-class Base{
-	protected:
-		std::string Name;
-	public:
-		Base(){Name = "BASE";}
-		void what(){std::cout << Name << std::endl;}
-};
-
-class Derived : public Base{
-	std::string Name;
-	public:
-		Derived(){Name = "DERIVED";}
-};
-
-int main(void)
+std::string& ft_replace(std::string& s, const std::string& s1, const std::string& s2)
 {
-	Base base;
-	Derived der;
-	base.what();
-	der.what();
+	int	index;
+	const int	len1 = s1.length();
+
+	index = s.find(s1);
+	while (index != std::string::npos)
+	{
+		s.erase(index, len1);
+		s.insert(index, s2);
+		index = s.find(s1, index + len1);
+	}
+	return (s);
+}
+
+int main(void){
+	std::string str = "hi\n my name is sisis\n";
+	ft_replace(str, "\n", "a");
+	std::cout << str << std::endl;
 }
