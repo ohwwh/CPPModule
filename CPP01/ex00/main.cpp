@@ -10,4 +10,5 @@ int main(void)
 	Zombie *daughter = new Zombie("Daughter");
 	daughter->announce();
 	delete daughter;
+	delete child;
 }

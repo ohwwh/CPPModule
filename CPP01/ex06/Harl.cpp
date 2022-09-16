@@ -12,10 +12,10 @@ Harl::Harl(){
 	ptr[1] = &Harl::info;
 	ptr[2] = &Harl::warning;
 	ptr[3] = &Harl::error;
-	str_ptr[0] = "DEBUG";
-	str_ptr[1] = "INFO";
-	str_ptr[2] = "WARNING";
-	str_ptr[3] = "ERROR";
+	str[0] = "DEBUG";
+	str[1] = "INFO";
+	str[2] = "WARNING";
+	str[3] = "ERROR";
 }
 
 void Harl::debug(void){
@@ -45,7 +45,7 @@ void Harl::complain(std::string level){
 	toUpper(&level);
 	for (int i = 0; i < 4; i ++)
 	{
-		if (str_ptr[i] == level)
+		if (str[i] == level)
 		{
 			j = i;
 			break ;

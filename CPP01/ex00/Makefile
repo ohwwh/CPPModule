@@ -6,7 +6,7 @@
 #    By: hoh <hoh@student.42.kr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/23 02:36:10 by ohw               #+#    #+#              #
-#    Updated: 2022/09/02 15:42:54 by hoh              ###   ########.fr        #
+#    Updated: 2022/09/16 15:38:23 by hoh              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ INCS=./
 SRCS=main.cpp randomChump.cpp Zombie.cpp
 OBJS=${SRCS:.cpp=.o}
 
-all : $(NAME)z
+all : $(NAME)
 
 $(NAME) : $(OBJS)
 	$(CXX) $(CFLAGS) -o $(NAME) $(OBJS) -I$(INCS)

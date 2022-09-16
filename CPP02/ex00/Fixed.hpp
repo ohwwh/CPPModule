@@ -11,6 +11,7 @@ class Fixed{
 		Fixed(const Fixed& fP);
 		Fixed& operator=(const Fixed& fP);
 		~Fixed();
+		
 		int	getRawBits(void) const;
 		void setRawBits(int const raw);
 };
