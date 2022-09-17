@@ -1,31 +1,29 @@
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main(void){
-	Bureaucrat b1;
-	std::cout << b1 << std::endl;
-	b1.relagation();
-	std::cout << b1 << std::endl;
-	try{
-		Bureaucrat b2("Obama", 0);
-	}
-	catch (std::exception& e){std::cout << e.what();}
-	try{
-		Bureaucrat b3("Billy", 160);
-	}
-	catch (std::exception& e){std::cout << e.what();}
-	Bureaucrat b4("test", 1);
-	std::cout << b4 << std::endl;
-	b4.promotion();
-	std::cout << b4 << std::endl;
-	Bureaucrat b5("test2", 50);
-	b5.promotion();
-	std::cout << b5 << std::endl;
-	b5.relagation();
-	std::cout << b5 << std::endl;
-	Form f1("form1", 1, 1);
-	std::cout << f1 << std::endl;
-	b5.signForm(f1);
-	b4.signForm(f1);
-	std::cout << f1 << std::endl;
+	Bureaucrat b1("Billy", 150), b2("James", 50), b3("Charles", 10), b4("Obama", 1);
+	ShrubberyCreationForm s("Billy's house");
+	RobotomyRequestForm r("Billy");
+	PresidentialPardonForm p("Billy");
+
+	b1.executeForm(s);
+	b2.signForm(s);
+	b1.executeForm(s);
+	b2.executeForm(s);
+
+	std::cout << std::endl;
+
+	b2.executeForm(r);
+	b2.signForm(r);
+	b2.executeForm(r);
+	b3.executeForm(r);
+
+	std::cout << std::endl;
+
+	b3.executeForm(p);
+	b3.signForm(p);
+	b3.executeForm(p);
+	b4.executeForm(p);
 }
