@@ -8,5 +8,8 @@ int main(void){
 	Form* f2 = i.makeForm("RobotomyRequestForm", "Billy");
 	Form* f3 = i.makeForm("PresidentialPardonForm", "Billy");
 	Form* f4 = i.makeForm("PresidentilPardonForm", "Billy");
-	
+	delete f1;
+	delete f2;
+	delete f3;
+	delete f4;
 }
