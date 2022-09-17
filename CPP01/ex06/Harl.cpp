@@ -51,11 +51,17 @@ void Harl::complain(std::string level){
 			break ;
 		}
 	}
-	if (j == -1)
-	{
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-		return ;
+	switch (j){
+		case 0:
+			(this->*ptr[0])();
+		case 1:
+			(this->*ptr[1])();
+		case 2:
+			(this->*ptr[2])();
+		case 3:
+			(this->*ptr[3])();
+		default:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+		
 	}
-	for (int i = j; i < 4; i ++)
-		(this->*ptr[i])();
 }

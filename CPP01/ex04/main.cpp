@@ -7,6 +7,8 @@ void ft_replace(std::string& s, const std::string& s1, const std::string& s2)
 	int	index;
 	const int	len1 = s1.length();
 
+	if (s1.empty())
+		return ;
 	index = s.find(s1);
 	while (index != std::string::npos)
 	{
@@ -29,7 +31,6 @@ int main(int argc, char *argv[]){
 	file = file + ".replace";
 	std::string s;
 	std::string s1 = argv[2];
-	std::cout << s1 << std::endl;
 	std::string s2 = argv[3];
 	std::stringstream ss;
 	if (!in.is_open())
@@ -46,11 +47,11 @@ int main(int argc, char *argv[]){
 	in.read(&s[0], size);*/
 	ss << in.rdbuf();
 	s = ss.str();
-	in.close();
-	std::cout << s << std::endl;
+	//in.close();
+	//std::cout << s << std::endl;
 	ft_replace(s, s1, s2);
 	std::ofstream out(file);
-	std::cout << s << std::endl;
+	//std::cout << s << std::endl;
 	out << s;
 	return (0);
 }

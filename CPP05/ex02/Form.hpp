@@ -28,6 +28,7 @@ class Form{
 		int getGradeSign() const;
 		int getGradeExec() const;
 		void beSigned(const Bureaucrat& b);
+		virtual void execute(const Bureaucrat& b) const;
 };
 
 std::ostream& operator<<(std::ostream& o, const Form& f);
