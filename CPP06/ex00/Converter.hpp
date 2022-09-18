@@ -1,6 +1,7 @@
 #ifndef CONVERTER_HPP
 #define CONVERTER_HPP
 #include <iostream>
+#include <iomanip>
 #include <sstream>
 #include <cmath>
 
@@ -14,10 +15,10 @@ class Converter{
 
 		Converter(const char str[]);
 		double getInit() const;
-		char toChar() const;
-		int toInt() const;
-		float toFloat() const;
-		double toDouble() const;
+		void printChar(std::ostream& os) const;
+		void printInt(std::ostream& os) const;
+		void printFloat(std::ostream& os) const;
+		void printDouble(std::ostream& os) const;
 };
 
 std::ostream& operator<<(std::ostream& os, const Converter& c);

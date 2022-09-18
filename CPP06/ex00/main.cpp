@@ -7,5 +7,5 @@ int main(int argc, char * argv[]){
 		std::cout << "argument error!\n";
 	//const char str[100] = "NaN";
 	Converter conv(argv[1]);
-	std::cout << conv << std::endl;
+	std::cout << conv;
 }

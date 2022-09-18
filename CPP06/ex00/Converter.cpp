@@ -13,23 +13,35 @@ double Converter::getInit() const{
 	return (init);
 }
 
-char Converter::toChar() const{
-	return (static_cast<char>(init));
+void Converter::printChar(std::ostream& os) const{
+	if (std::isnan(init) || std::isinf(init))
+		os << "impossible" << std::endl;
+	else
+		os << static_cast<char>(init) << std::endl;
 }
-int Converter::toInt() const{
-	return (static_cast<int>(init));
+void Converter::printInt(std::ostream& os) const{
+	if (std::isnan(init) || std::isinf(init))
+		os << "impossible" << std::endl;
+	else
+		os << static_cast<int>(init) << std::endl;
 }
-float Converter::toFloat() const{
-	return (static_cast<float>(init));
+void Converter::printFloat(std::ostream& os) const{
+	os << static_cast<float>(init);
+	if (round(init) == init) 
+		os << ".0f" << std::endl;
+	else
+		os << "f" << std::endl;
 }
-
-double Converter::toDouble() const{
-	return (init);
+void Converter::printDouble(std::ostream& os) const{
+	os << init;
+	if (round(init) == init) 
+		os << ".0" << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const Converter& c){
-	if (std::isnan(c.getInit()) || std::isinf(c.getInit()))
-	os << c.toChar() << std::endl << c.toInt() << std::endl << c.toFloat() << "f" << std::endl
-	<< c.toDouble();
+	c.printChar(os);
+	c.printInt(os);
+	c.printFloat(os);
+	c.printDouble(os);
 	return (os);
 }
