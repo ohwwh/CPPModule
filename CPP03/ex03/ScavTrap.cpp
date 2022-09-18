@@ -1,7 +1,7 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(){
-	Name = "SCV-77";
+ScavTrap::ScavTrap() : ClapTrap("SCV-77"){
+	//Name = "SCV-77";
 	hp = 100;
 	ep = 50;
 	hp_max = hp;

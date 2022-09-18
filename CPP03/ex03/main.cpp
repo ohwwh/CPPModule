@@ -18,7 +18,7 @@ int main()
 	CT.takeDamage(9);
 	CT3.takeDamage(9);
 	CT.guardGate();
-	CT.highFiveGuys();
+	CT.highFivesGuys();
 	CT.whoAmI();
 	ClapTrap ST;
 }

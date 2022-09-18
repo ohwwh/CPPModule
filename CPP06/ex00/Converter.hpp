@@ -13,10 +13,13 @@ class Converter{
 		~Converter();
 
 		Converter(const char str[]);
+		double getInit() const;
 		char toChar() const;
 		int toInt() const;
 		float toFloat() const;
 		double toDouble() const;
 };
+
+std::ostream& operator<<(std::ostream& os, const Converter& c);
 
 #endif

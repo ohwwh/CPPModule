@@ -4,11 +4,11 @@
 
 class ClapTrap {
 	std::string Name;
-	int	hp;
-	int ep;
-	int hp_max;
-	int ep_max;
-	int damage;
+	unsigned int hp;
+	unsigned int ep;
+	unsigned int hp_max;
+	unsigned int ep_max;
+	unsigned int damage;
 	public:
 		ClapTrap();
 		ClapTrap(const ClapTrap& ct);

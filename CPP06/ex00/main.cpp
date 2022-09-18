@@ -3,10 +3,9 @@
 #include "Converter.hpp"
 
 int main(int argc, char * argv[]){
-	const char str[100] = "NaN";
-	Converter conv(str);
-	std::cout << conv.toChar() << std::endl;
-	std::cout << conv.toInt() << std::endl;
-	std::cout << conv.toFloat() << std::endl;
-	std::cout << conv.toDouble() << std::endl;
+	if (argc != 2)
+		std::cout << "argument error!\n";
+	//const char str[100] = "NaN";
+	Converter conv(argv[1]);
+	std::cout << conv << std::endl;
 }

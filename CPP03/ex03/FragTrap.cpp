@@ -1,7 +1,7 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(){
-	Name = "FRG-59";
+FragTrap::FragTrap() : ClapTrap("FRG-59"){
+	//Name = "FRG-59";
 	hp = 100;
 	ep = 100;
 	hp_max = hp;
@@ -37,7 +37,7 @@ FragTrap::FragTrap(std::string name){
 	std::cout << "FragTrap " << Name << " is created!!\n";
 }
 
-void FragTrap::highFiveGuys(void){
+void FragTrap::highFivesGuys(void){
 	std::cout << "FragTrap: " << Name << ": high five!!\n";
 }
 

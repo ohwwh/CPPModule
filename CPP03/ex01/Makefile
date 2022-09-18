@@ -6,7 +6,7 @@
 #    By: hoh <hoh@student.42.kr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/23 02:36:10 by ohw               #+#    #+#              #
-#    Updated: 2022/09/07 14:03:52 by hoh              ###   ########.fr        #
+#    Updated: 2022/09/18 17:40:09 by hoh              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,9 @@ SRCS=main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJS=${SRCS:.cpp=.o}
 
 all : $(NAME)
+
+%.o : %.cpp
+	$(CXX) $(CFLAGS) -I$(INCS) -o $@ -c $<
 
 $(NAME) : $(OBJS)
 	$(CXX) $(CFLAGS) -o $(NAME) $(OBJS) -I$(INCS)

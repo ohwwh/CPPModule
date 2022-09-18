@@ -17,6 +17,6 @@ int main()
 	FragTrap CT3 = CT;
 	CT.takeDamage(9);
 	CT3.takeDamage(9);
-	CT.highFiveGuys();
+	CT.highFivesGuys();
 	ClapTrap ST;
 }

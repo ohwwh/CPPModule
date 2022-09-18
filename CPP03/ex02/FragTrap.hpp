@@ -3,7 +3,6 @@
 #include "ClapTrap.hpp"
 
 class FragTrap : public ClapTrap{
-	std::string Name;
 	public:
 		FragTrap();
 		FragTrap(const FragTrap& ct);
@@ -11,7 +10,8 @@ class FragTrap : public ClapTrap{
 		~FragTrap();
 
 		FragTrap(std::string name);
-		void highFiveGuys(void);
+		void attack(const std::string& target);
+		void highFivesGuys(void);
 };
 
 #endif

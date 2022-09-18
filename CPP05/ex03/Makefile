@@ -6,7 +6,7 @@
 #    By: hoh <hoh@student.42.kr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/23 02:36:10 by ohw               #+#    #+#              #
-#    Updated: 2022/09/17 17:36:56 by hoh              ###   ########.fr        #
+#    Updated: 2022/09/18 17:58:57 by hoh              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,9 @@ SRCS=main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestF
 OBJS=${SRCS:.cpp=.o}
 
 all : $(NAME)
+
+%.o : %.cpp
+	$(CXX) $(CFLAGS) -I$(INCS) -o $@ -c $<
 
 $(NAME) : $(OBJS)
 	$(CXX) $(CFLAGS) -o $(NAME) $(OBJS) -I$(INCS)
