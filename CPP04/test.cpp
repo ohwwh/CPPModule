@@ -27,8 +27,7 @@ class derived : public base{
 };
 
 int main(void){
-	base b;
-	derived d;
-	b.what();
-	d.what();
+	char a = 10;
+	int& r = (int &)a;
+	r = 5;
 }
