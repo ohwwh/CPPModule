@@ -7,10 +7,10 @@ int main(void){
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	const WrongAnimal* k = new WrongCat();
-	Animal a;
+	/*Animal a;
 	Cat c;
 	a = c;
-	a.makeSound();
+	a.makeSound();*/
 
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
@@ -23,4 +23,5 @@ int main(void){
 	delete meta;
 	delete j;
 	delete i;
+	delete k;
 }

@@ -17,5 +17,5 @@ std::string const & AMateria::getType() const{
 }
 
 void AMateria::use(ICharacter& target){
-	std::cout << "* Unknown Materia *\n" << std::endl;
+	std::cout << "* " << target.getName() << " : Unknown Materia *\n" << std::endl;
 }

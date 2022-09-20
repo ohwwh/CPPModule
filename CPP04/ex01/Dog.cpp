@@ -5,19 +5,12 @@ Dog::Dog(){
 	std::cout << "Dog is created" << std::endl;
 	brain = new Brain("dog");
 }
-Dog::Dog(const Dog& a){
-	type = a.type;
-	/*brain = new Brain();
-	for (int i = 0; i < 100; i ++)
-		brain[i] = a.brain[i];*/
+Dog::Dog(const Dog& a) : Animal(a) {
 	std::cout << "Dog is copied and created" << std::endl;
 	brain = new Brain(*(a.brain));
 }
 Dog& Dog::operator=(const Dog& a){
 	type = a.type;
-	/*brain = new Brain();
-	for (int i = 0; i < 100; i ++)
-		brain[i] = a.brain[i];*/
 	std::cout << "Dog is copied" << std::endl;
 	brain = new Brain(*(a.brain));
 	return (*this);

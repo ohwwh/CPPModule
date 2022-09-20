@@ -6,15 +6,15 @@
 #    By: hoh <hoh@student.42.kr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/23 02:36:10 by ohw               #+#    #+#              #
-#    Updated: 2022/09/18 17:59:16 by hoh              ###   ########.fr        #
+#    Updated: 2022/09/20 10:04:11 by hoh              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX=c++
 CFLAGS=-Wall -Wextra -Werror -std=c++98
-NAME=bureau
+NAME=serial
 INCS=./
-SRCS=main.cpp Bureaucrat.cpp
+SRCS=main.cpp Data.cpp
 OBJS=${SRCS:.cpp=.o}
 
 all : $(NAME)
@@ -31,6 +31,8 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-re: fclean all
+re: 
+	make fclean
+	make all
 
 .PHONY: all clean fclean re

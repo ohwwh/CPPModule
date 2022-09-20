@@ -4,8 +4,7 @@ WrongCat::WrongCat(){
 	type = "Cat";
 	std::cout << "WrongCat is created" << std::endl;
 }
-WrongCat::WrongCat(const WrongCat& a){
-	type = a.type;
+WrongCat::WrongCat(const WrongCat& a) : WrongAnimal(a) {
 	std::cout << "WrongCat is copied and created" << std::endl;
 }
 WrongCat& WrongCat::operator=(const WrongCat& a){

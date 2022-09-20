@@ -3,9 +3,8 @@
 Cure::Cure(){
 	type = "cure";
 }
-Cure::Cure(const Cure& a){
-	type = a.type;
-}
+Cure::Cure(const Cure& a) : AMateria(a){}
+
 Cure& Cure::operator=(const Cure& a){
 	type = a.type;
 	return (*this);

@@ -4,8 +4,7 @@ Dog::Dog(){
 	type = "Dog";
 	std::cout << "Dog is created" << std::endl;
 }
-Dog::Dog(const Dog& a){
-	type = a.type;
+Dog::Dog(const Dog& a) : Animal(a) {
 	std::cout << "Dog is copied and created" << std::endl;
 }
 Dog& Dog::operator=(const Dog& a){

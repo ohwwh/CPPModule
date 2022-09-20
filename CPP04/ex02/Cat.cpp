@@ -5,19 +5,12 @@ Cat::Cat(){
 	std::cout << "Cat is created" << std::endl;
 	brain = new Brain("cat");
 }
-Cat::Cat(const Cat& a){
-	type = a.type;
-	/*brain = new Brain();
-	for (int i = 0; i < 100; i ++)
-		brain[i] = a.brain[i];*/
+Cat::Cat(const Cat& a) : Animal(a) {
 	std::cout << "Cat is copied and created" << std::endl;
 	brain = new Brain(*(a.brain));
 }
 Cat& Cat::operator=(const Cat& a){
 	type = a.type;
-	/*brain = new Brain();
-	for (int i = 0; i < 100; i ++)
-		brain[i] = a.brain[i];*/
 	std::cout << "Cat is copied" << std::endl;
 	brain = new Brain(*(a.brain));
 	return (*this);

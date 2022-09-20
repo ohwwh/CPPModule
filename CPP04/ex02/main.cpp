@@ -7,6 +7,7 @@ int main(void){
 	arr[1] = new Dog();
 	arr[2] = new Cat();
 	arr[3] = new Cat();
+	//arr[4] = new Animal();
 
 	for (int i = 0; i < 4; i ++){
 		std::cout << arr[i]->getIdea() << std::endl;

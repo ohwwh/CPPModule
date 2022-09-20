@@ -4,8 +4,7 @@ Cat::Cat(){
 	type = "Cat";
 	std::cout << "Cat is created" << std::endl;
 }
-Cat::Cat(const Cat& a){
-	type = a.type;
+Cat::Cat(const Cat& a) : Animal(a) {
 	std::cout << "Cat is copied and created" << std::endl;
 }
 Cat& Cat::operator=(const Cat& a){

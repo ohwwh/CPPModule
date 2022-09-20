@@ -3,9 +3,8 @@
 Ice::Ice(){
 	type = "ice";
 }
-Ice::Ice(const Ice& a){
-	type = a.type;
-}
+Ice::Ice(const Ice& a)  : AMateria(a){}
+
 Ice& Ice::operator=(const Ice& a){
 	type = a.type;
 	return (*this);
