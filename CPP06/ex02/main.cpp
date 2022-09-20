@@ -6,7 +6,6 @@
 #include <iostream>
 
 Base* generate(void) {
-	Base* ret;
 	std::random_device rd;
 	std::mt19937 gen(rd());
 	std::uniform_int_distribution<int> dis(0, 98);
@@ -30,6 +29,35 @@ void identify(Base* p){
 		std::cout << "what's this type??\n";
 }
 
-void identify(Base& p){
-	
+/*void try_A(Base& r){
+	try{
+		dynamic_cast<A&>(r);
+		std::cout << "this is A\n";
+	}
+	catch(std::exception e){}
+}*/
+
+void identify(Base& r){
+	try{
+		(void)dynamic_cast<A&>(r);
+		std::cout << "this is A\n";
+	}
+	catch(std::exception e){}
+	try{
+		(void)dynamic_cast<B&>(r);
+		std::cout << "this is B\n";
+	}
+	catch(std::exception e){}
+	try{
+		(void)dynamic_cast<C&>(r);
+		std::cout << "this is C\n";
+	}
+	catch(std::exception e){}
+}
+
+int main(void){
+	Base* b = generate();
+	Base&b2 = *b;
+	identify(b);
+	identify(b2);
 }
