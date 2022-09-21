@@ -15,7 +15,7 @@ Bureaucrat::Bureaucrat() : name("default"), grade(150){}
 Bureaucrat::Bureaucrat(const Bureaucrat& b) : name(b.name), grade(b.grade){}
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& b){
-	(void)b;
+	grade = b.grade;
 	return (*this); 
 }
 

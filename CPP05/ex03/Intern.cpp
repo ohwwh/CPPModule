@@ -38,6 +38,7 @@ Form* Intern::makeForm(std::string name_form, std::string name_target){
 			break ;
 		default:
 			ret = 0;
+			//멤버 함수 포인터를 이용해야 함. 평가지에서 명시됨. 끔찍하다 진짜
 	}
 	if (j < 3)
 		std::cout << "Intern creates " << forms[j] << std::endl;
@@ -45,3 +46,34 @@ Form* Intern::makeForm(std::string name_form, std::string name_target){
 		std::cout << name_form << ": such type doesn't exist" << std::endl;
 	return (ret);
 }
+
+/*Form* Intern::makeForm(std::string name_form, std::string name_target){
+	int j = 3;
+	Form* ret;
+
+	for (int i = 0; i < 3; i ++){
+		if (name_form == forms[i]->getName()){
+			j = i;
+			break ;
+		}
+	}
+	switch (j){
+		case 0:
+			ret =  (new ShrubberyCreationForm(name_target));
+			break ;
+		case 1:
+			ret = (new RobotomyRequestForm(name_target));
+			break ;
+		case 2:
+			ret = (new PresidentialPardonForm(name_target));
+			break ;
+		default:
+			ret = 0;
+			//멤버 함수 포인터를 이용해야 함. 평가지에서 명시됨. 끔찍하다 진짜
+	}
+	if (j < 3)
+		std::cout << "Intern creates " << forms[j] << std::endl;
+	else
+		std::cout << name_form << ": such type doesn't exist" << std::endl;
+	return (ret);
+}*/

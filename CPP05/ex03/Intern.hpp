@@ -5,6 +5,7 @@
 #include "ShrubberyCreationForm.hpp"
 
 class Intern{
+	//Form* forms[3];
 	std::string forms[3];
 	public:
 		Intern();
