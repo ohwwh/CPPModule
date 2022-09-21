@@ -1,7 +1,5 @@
 #include "Base.hpp"
-#include "A.hpp"
-#include "B.hpp"
-#include "C.hpp"
+#include "Derived.hpp"
 #include <random>
 #include <iostream>
 
@@ -29,35 +27,39 @@ void identify(Base* p){
 		std::cout << "what's this type??\n";
 }
 
-/*void try_A(Base& r){
-	try{
-		dynamic_cast<A&>(r);
-		std::cout << "this is A\n";
-	}
-	catch(std::exception e){}
-}*/
 
 void identify(Base& r){
 	try{
 		(void)dynamic_cast<A&>(r);
 		std::cout << "this is A\n";
+		return ;
 	}
 	catch(std::exception e){}
 	try{
 		(void)dynamic_cast<B&>(r);
 		std::cout << "this is B\n";
+		return ;
 	}
 	catch(std::exception e){}
 	try{
 		(void)dynamic_cast<C&>(r);
 		std::cout << "this is C\n";
+		return ;
 	}
-	catch(std::exception e){}
+	catch(std::exception e){std::cout << "what's this type??\n";}
 }
 
 int main(void){
 	Base* b = generate();
-	Base&b2 = *b;
+	Base& b2 = *b;
+	//Base b2 = *b;
+	F* f = new F();
+	F& f2 = *f;
 	identify(b);
 	identify(b2);
+	identify(f);
+	identify(f2);
+	identify(0);
+	delete f;
+	delete b;
 }

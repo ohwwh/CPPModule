@@ -24,9 +24,7 @@ class Bureaucrat{
 		const std::string getName() const;
 		int getGrade() const;
 		void promotion();
-		void try_promotion();
 		void relagation();
-		void try_relagation();
 };
 
 std::ostream& operator<<(std::ostream& o, const Bureaucrat& b);

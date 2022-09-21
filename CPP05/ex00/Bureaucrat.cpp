@@ -12,9 +12,12 @@ Bureaucrat::Bureaucrat() : name("default"), grade(150){}
 
 Bureaucrat::Bureaucrat(const Bureaucrat& b) : name(b.name), grade(b.grade){}
 
-Bureaucrat& Bureaucrat::operator=(const Bureaucrat& b){ return (*this); }
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& b){
+	(void)b;
+	return (*this); 
+}
 
-Bureaucrat::~Bureaucrat(){}
+Bureaucrat::~Bureaucrat(){ std::cout << name << " is destroyed\n"; }
 
 Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name), grade(grade){
 	if (grade < 1)
@@ -31,25 +34,22 @@ int Bureaucrat::getGrade() const{
 	return (grade);
 }
 
-void Bureaucrat::try_promotion(){
-	if (grade <= 1)
-		throw gradeTooHighException();
-	grade --;
-}
 
 void Bureaucrat::promotion(){
-	try { try_promotion();}
+	try { 
+		if (grade <= 1)
+			throw gradeTooHighException();
+		grade --;
+	}
 	catch (std::exception& e){std::cout << e.what();}
 }
 
-void Bureaucrat::try_relagation(){
-	if (grade >= 150)
-		throw gradeTooLowException();
-	grade ++;
-}
-
 void Bureaucrat::relagation(){
-	try { try_relagation();}
+	try { 
+		if (grade >= 150)
+			throw gradeTooLowException();
+		grade ++;
+	}
 	catch (std::exception& e){std::cout << e.what();}
 }
 

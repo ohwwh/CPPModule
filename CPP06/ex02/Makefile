@@ -6,15 +6,15 @@
 #    By: hoh <hoh@student.42.kr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/23 02:36:10 by ohw               #+#    #+#              #
-#    Updated: 2022/09/20 10:04:11 by hoh              ###   ########.fr        #
+#    Updated: 2022/09/21 11:24:14 by hoh              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX=c++
-CFLAGS=#-Wall -Wextra -Werror -std=c++98
+CFLAGS=-Wall -Wextra -Werror -std=c++98
 NAME=dynamic
 INCS=./
-SRCS=main.cpp A.cpp B.cpp C.cpp Base.cpp
+SRCS=main.cpp Base.cpp Derived.cpp
 OBJS=${SRCS:.cpp=.o}
 
 all : $(NAME)
