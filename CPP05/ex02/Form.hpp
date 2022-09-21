@@ -25,7 +25,7 @@ class Form{
 		};
 		Form();
 		Form(const Form& b);
-		~Form();
+		virtual ~Form();
 
 		Form(const std::string name, int grade_sign, int grade_exec);
 		const std::string getName() const;
@@ -33,6 +33,7 @@ class Form{
 		int getGradeSign() const;
 		int getGradeExec() const;
 		void beSigned(const Bureaucrat& b);
+		void check_execute(const Bureaucrat& b) const;
 		virtual void execute(const Bureaucrat& b) const = 0;
 };
 

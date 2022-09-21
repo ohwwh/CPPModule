@@ -6,11 +6,14 @@ Intern::Intern(){
 	forms[2] = "PresidentialPardonForm";
 }
 Intern::Intern(const Intern& b){
-	forms[0] = "ShrubberyCreationForm";
-	forms[1] = "RobotomyRequestForm";
-	forms[2] = "PresidentialPardonForm";
+	forms[0] = b.forms[0];
+	forms[1] = b.forms[1];
+	forms[2] = b.forms[2];
 }
-Intern& Intern::operator=(const Intern& b){return (*this);}
+Intern& Intern::operator=(const Intern& b){
+	(void)b;
+	return (*this);
+}
 Intern::~Intern(){}
 
 Form* Intern::makeForm(std::string name_form, std::string name_target){

@@ -16,7 +16,10 @@ Form::Form() : name("default"), sign(false), grade_sign(150), grade_exec(150){}
 
 Form::Form(const Form& b) : name(b.name), sign(false), grade_sign(b.grade_sign), grade_exec(b.grade_exec){}
 
-Form& Form::operator=(const Form& b){ return (*this);}
+Form& Form::operator=(const Form& b){
+	(void)b;
+	return (*this);
+}
 
 Form::~Form(){}
 
@@ -49,6 +52,13 @@ void Form::beSigned(const Bureaucrat& b){
 		throw gradeTooHighException();
 	else
 		sign = true;
+}
+
+void Form::check_execute(const Bureaucrat& b) const{
+	if (sign == false)
+		throw notSignedException();
+	else if (b.getGrade() > grade_exec)
+		throw gradeTooHighException();
 }
 
 std::ostream& operator<<(std::ostream& o, const Form& f){

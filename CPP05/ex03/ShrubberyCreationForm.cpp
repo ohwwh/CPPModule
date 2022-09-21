@@ -12,10 +12,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string target_name)
 : Form("ShrubberyCreationForm", 145, 137), target(target_name){};
 
 void ShrubberyCreationForm::execute(const Bureaucrat& b) const{
-	if (sign == false)
-		throw notSignedException();
-	else if (b.getGrade() > grade_exec)
-		throw gradeTooHighException();
+	check_execute(b);
 	std::string shrubbery = 
 	"                .o00o               \n"
     "               o000000oo            \n"

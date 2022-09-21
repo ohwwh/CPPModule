@@ -33,6 +33,7 @@ class Form{
 		int getGradeSign() const;
 		int getGradeExec() const;
 		void beSigned(const Bureaucrat& b);
+		void check_execute(const Bureaucrat& b) const;
 		virtual void execute(const Bureaucrat& b) const = 0;
 };
 

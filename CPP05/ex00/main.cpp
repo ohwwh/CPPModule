@@ -1,6 +1,7 @@
 #include "Bureaucrat.hpp"
 
 int main(void){
+	std::cout << "\n------------------------------\n\n";
 	Bureaucrat b1;
 	std::cout << b1 << std::endl;
 	b1.relagation();
@@ -44,4 +45,5 @@ int main(void){
 
 	b5.relagation();
 	std::cout << b5 << std::endl;
+	std::cout << "\n------------------------------\n\n";
 }

@@ -12,10 +12,8 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string target_name)
 : Form("RobotomyRequestForm", 72, 45), target(target_name){};
 
 void RobotomyRequestForm::execute(const Bureaucrat& b) const{
-	if (sign == false)
-		throw notSignedException();
-	else if (b.getGrade() > grade_exec)
-		throw gradeTooHighException();
+	check_execute(b);
+	std::cout << "drilling sound......\n";
 	std::random_device rd;
 	std::mt19937 gen(rd());
 	std::uniform_int_distribution<int> dis(0, 99);
