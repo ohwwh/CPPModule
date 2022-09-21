@@ -3,6 +3,7 @@
 int main(void){
 	std::cout << "\n------------------------------\n\n";
 	Bureaucrat b1;
+	Bureaucrat b2;
 	std::cout << b1 << std::endl;
 	b1.relagation();
 	std::cout << b1 << std::endl;

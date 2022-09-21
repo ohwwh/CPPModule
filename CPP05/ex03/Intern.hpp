@@ -5,8 +5,8 @@
 #include "ShrubberyCreationForm.hpp"
 
 class Intern{
-	//Form* forms[3];
-	std::string forms[3];
+	Form* (Intern::*forms[3])(std::string);
+	std::string names[3];
 	public:
 		Intern();
 		Intern(const Intern& b);
@@ -14,6 +14,10 @@ class Intern{
 		~Intern();
 
 		Form* makeForm(std::string name_form, std::string name_target);
+		Form* makeS(std::string name_target);
+		Form* makeR(std::string name_target);
+		Form* makeP(std::string name_target);
+
 };
 
 #endif

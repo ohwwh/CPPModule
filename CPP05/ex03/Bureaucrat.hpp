@@ -7,6 +7,7 @@ class Form;
 class Bureaucrat{
 	const std::string name;
 	int grade;
+	
 	public:
 		class gradeTooHighException : public std::exception{
 			public:
