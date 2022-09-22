@@ -1,16 +1,5 @@
 #include "Intern.hpp"
 
-/*Intern::Intern(){
-	forms[0] = "ShrubberyCreationForm";
-	forms[1] = "RobotomyRequestForm";
-	forms[2] = "PresidentialPardonForm";
-}
-Intern::Intern(const Intern& b){
-	forms[0] = b.forms[0];
-	forms[1] = b.forms[1];
-	forms[2] = b.forms[2];
-}*/
-
 Intern::Intern(){
 	forms[0] = &Intern::makeS;
 	forms[1] = &Intern::makeR;
@@ -67,7 +56,6 @@ Form* Intern::makeP(std::string name_target){
 			break ;
 		default:
 			ret = 0;
-			//멤버 함수 포인터를 이용해야 함. 평가지에서 명시됨. 끔찍하다 진짜
 	}
 	if (j < 3)
 		std::cout << "Intern creates " << forms[j] << std::endl;
