@@ -36,7 +36,7 @@ void Converter::printFloat(std::ostream& os) const{
 		return ;
 	}
 	os << static_cast<float>(init);
-	if (round(init) == init) 
+	if (!std::isnan(init) && !std::isinf(init) && round(init) == init) 
 		os << ".0f" << std::endl;
 	else
 		os << "f" << std::endl;
@@ -48,7 +48,7 @@ void Converter::printDouble(std::ostream& os) const{
 		return ;
 	}
 	os << static_cast<double>(init);
-	if (round(init) == init) 
+	if (!std::isnan(init) && !std::isinf(init) && round(init) == init) 
 		os << ".0" << std::endl;
 	else
 		os << std::endl;
