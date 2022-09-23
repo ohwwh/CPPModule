@@ -30,7 +30,8 @@ void Converter::printInt(std::ostream& os) const{
 		os << static_cast<int>(init) << std::endl;
 }
 void Converter::printFloat(std::ostream& os) const{
-	if (std::numeric_limits<float>::max() < init || (-1 * std::numeric_limits<float>::max()) > init){
+	if (!std::isnan(init) && !std::isinf(init) && 
+	(std::numeric_limits<float>::max() < init || (-1 * std::numeric_limits<float>::max()) > init)){
 		os << "impossible" << std::endl;
 		return ;
 	}
@@ -41,13 +42,16 @@ void Converter::printFloat(std::ostream& os) const{
 		os << "f" << std::endl;
 }
 void Converter::printDouble(std::ostream& os) const{
-	if (std::numeric_limits<double>::max() < init || (-1 * std::numeric_limits<double>::max()) > init){
+	if (!std::isnan(init) && !std::isinf(init) && 
+	(std::numeric_limits<double>::max() < init || (-1 * std::numeric_limits<double>::max()) > init)){
 		os << "impossible" << std::endl;
 		return ;
 	}
 	os << static_cast<double>(init);
 	if (round(init) == init) 
 		os << ".0" << std::endl;
+	else
+		os << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const Converter& c){

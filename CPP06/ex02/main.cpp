@@ -19,12 +19,18 @@ Base* generate(void) {
 }
 
 void identify(Base* p){
-	if (dynamic_cast<A *>(p))
+	if (dynamic_cast<A *>(p)){
 		std::cout << "this is A\n";
-	else if (dynamic_cast<B *>(p))
+		return ;
+	}
+	else if (dynamic_cast<B *>(p)){
 		std::cout << "this is B\n";
-	else if (dynamic_cast<C *>(p))
+		return ;
+	}
+	else if (dynamic_cast<C *>(p)){
 		std::cout << "this is C\n";
+		return ;
+	}
 	else
 		std::cout << "what's this type??\n";
 }
@@ -52,15 +58,18 @@ void identify(Base& r){
 }
 
 int main(void){
-	Base* b = generate();
-	Base& b2 = *b;
-	F* f = new F();
-	F& f2 = *f;
-	identify(b);
-	identify(b2);
-	identify(f);
-	identify(f2);
-	identify(0);
-	delete f;
-	delete b;
+	try{
+		Base* b = generate();
+		Base& b2 = *b;
+		F* f = new F();
+		F& f2 = *f;
+		identify(b);
+		identify(b2);
+		identify(f);
+		identify(f2);
+		identify(0);
+		delete f;
+		delete b;
+	}
+	catch(std::exception& e){ std::cout << e.what() << std::endl; }
 }
