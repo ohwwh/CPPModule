@@ -10,10 +10,13 @@ Cat::Cat(const Cat& a) : Animal(a) {
 	brain = new Brain(*(a.brain));
 }
 Cat& Cat::operator=(const Cat& a){
+	if (&a == this)
+		return (*this);
 	type = a.type;
 	std::cout << "Cat is copied" << std::endl;
 	brain = new Brain(*(a.brain));
 	return (*this);
+	// 만약 인자로 자기 자신이 들어온다면?? leak 발생
 }
 Cat::~Cat(){
 	delete brain;

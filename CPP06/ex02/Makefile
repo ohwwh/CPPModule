@@ -6,12 +6,12 @@
 #    By: hoh <hoh@student.42.kr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/23 02:36:10 by ohw               #+#    #+#              #
-#    Updated: 2022/09/23 14:18:28 by hoh              ###   ########.fr        #
+#    Updated: 2022/09/23 20:57:04 by hoh              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX=c++
-CFLAGS=-Wall -Wextra -Werror -std=c++98
+CPPFLAGS=-Wall -Wextra -Werror -std=c++98
 NAME=dynamic
 INCS=./
 SRCS=main.cpp random_generator.cpp
@@ -20,10 +20,10 @@ OBJS=${SRCS:.cpp=.o}
 all : $(NAME)
 
 %.o : %.cpp
-	$(CXX) $(CFLAGS) -I$(INCS) -o $@ -c $<
+	$(CXX) $(CPPFLAGS) -I$(INCS) -o $@ -c $<
 
 $(NAME) : $(OBJS)
-	$(CXX) $(CFLAGS) -o $(NAME) $(OBJS) -I$(INCS)
+	$(CXX) $(CPPFLAGS) -o $(NAME) $(OBJS) -I$(INCS)
 
 clean:
 	rm -f $(OBJS)

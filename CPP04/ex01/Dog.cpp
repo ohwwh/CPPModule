@@ -10,6 +10,8 @@ Dog::Dog(const Dog& a) : Animal(a) {
 	brain = new Brain(*(a.brain));
 }
 Dog& Dog::operator=(const Dog& a){
+	if (&a == this)
+		return (*this);
 	type = a.type;
 	std::cout << "Dog is copied" << std::endl;
 	brain = new Brain(*(a.brain));

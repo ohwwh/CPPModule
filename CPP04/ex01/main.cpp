@@ -14,4 +14,9 @@ int main(void){
 	}
 	for (int i = 0; i < 4; i ++)
 		delete arr[i];
+
+	std::cout << "\n\n----------------------------------\n\n";
+
+	Cat cat;
+	cat = cat;
 }
