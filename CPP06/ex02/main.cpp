@@ -1,13 +1,15 @@
 #include "Base.hpp"
 #include "Derived.hpp"
-#include <random>
 #include <iostream>
 
+extern unsigned int random_generator(int range);
+
 Base* generate(void) {
-	std::random_device rd;
+	/*std::random_device rd;
 	std::mt19937 gen(rd());
 	std::uniform_int_distribution<int> dis(0, 98);
-	const int r = dis(gen);
+	const int r = dis(gen);*/
+	const unsigned int r = random_generator(98);
 	if (r % 3 == 0)
 		return (new A());
 	else if (r % 3 == 1)
@@ -34,25 +36,24 @@ void identify(Base& r){
 		std::cout << "this is A\n";
 		return ;
 	}
-	catch(std::exception e){}
+	catch(std::exception &e){}
 	try{
 		(void)dynamic_cast<B&>(r);
 		std::cout << "this is B\n";
 		return ;
 	}
-	catch(std::exception e){}
+	catch(std::exception &e){}
 	try{
 		(void)dynamic_cast<C&>(r);
 		std::cout << "this is C\n";
 		return ;
 	}
-	catch(std::exception e){std::cout << "what's this type??\n";}
+	catch(std::exception &e){std::cout << "what's this type??\n";}
 }
 
 int main(void){
 	Base* b = generate();
 	Base& b2 = *b;
-	//Base b2 = *b;
 	F* f = new F();
 	F& f2 = *f;
 	identify(b);

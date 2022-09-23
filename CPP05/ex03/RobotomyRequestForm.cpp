@@ -9,7 +9,7 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& b)
 RobotomyRequestForm::~RobotomyRequestForm(){}
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string target_name)
-: Form("RobotomyRequestForm", 72, 45), target(target_name){};
+: Form("RobotomyRequestForm", 72, 45), target(target_name){}
 
 void RobotomyRequestForm::execute(const Bureaucrat& b) const{
 	check_execute(b);

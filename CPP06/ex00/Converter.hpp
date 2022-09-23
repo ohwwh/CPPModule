@@ -6,7 +6,7 @@
 #include <cmath>
 
 class Converter{
-	double init;
+	long double init;
 	public:
 		Converter();
 		Converter(const Converter& c);

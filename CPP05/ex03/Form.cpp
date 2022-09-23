@@ -16,8 +16,8 @@ Form::Form() : name("default"), sign(false), grade_sign(150), grade_exec(150){}
 
 Form::Form(const Form& b) : name(b.name), sign(false), grade_sign(b.grade_sign), grade_exec(b.grade_exec){}
 
-Form& Form::operator=(const Form& b){
-	(void)b;
+Form& Form::operator=(const Form& b){ 
+	sign = b.sign;
 	return (*this);
 }
 

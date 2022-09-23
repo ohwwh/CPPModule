@@ -9,7 +9,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& b)
 PresidentialPardonForm::~PresidentialPardonForm(){}
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string target_name)
-: Form("PresidentialPardonForm", 25, 5), target(target_name){};
+: Form("PresidentialPardonForm", 25, 5), target(target_name){}
 
 void PresidentialPardonForm::execute(const Bureaucrat& b) const{
 	check_execute(b);

@@ -1,4 +1,5 @@
 #include "Converter.hpp"
+#include <limits>
 
 Converter::Converter(){ init = 0; }
 Converter::Converter(const Converter& c){ init = c.init; }
@@ -16,16 +17,23 @@ double Converter::getInit() const{
 void Converter::printChar(std::ostream& os) const{
 	if (std::isnan(init) || std::isinf(init))
 		os << "impossible" << std::endl;
+	else if (126 < init || 32 > init)
+		os << "Non displayable" << std::endl;
 	else
 		os << static_cast<char>(init) << std::endl;
 }
 void Converter::printInt(std::ostream& os) const{
-	if (std::isnan(init) || std::isinf(init))
+	if (std::isnan(init) || std::isinf(init) || std::numeric_limits<int>::max() < init || 
+	std::numeric_limits<int>::min() > init)
 		os << "impossible" << std::endl;
 	else
 		os << static_cast<int>(init) << std::endl;
 }
 void Converter::printFloat(std::ostream& os) const{
+	if (std::numeric_limits<float>::max() < init || (-1 * std::numeric_limits<float>::max()) > init){
+		os << "impossible" << std::endl;
+		return ;
+	}
 	os << static_cast<float>(init);
 	if (round(init) == init) 
 		os << ".0f" << std::endl;
@@ -33,7 +41,11 @@ void Converter::printFloat(std::ostream& os) const{
 		os << "f" << std::endl;
 }
 void Converter::printDouble(std::ostream& os) const{
-	os << init;
+	if (std::numeric_limits<double>::max() < init || (-1 * std::numeric_limits<double>::max()) > init){
+		os << "impossible" << std::endl;
+		return ;
+	}
+	os << static_cast<double>(init);
 	if (round(init) == init) 
 		os << ".0" << std::endl;
 }

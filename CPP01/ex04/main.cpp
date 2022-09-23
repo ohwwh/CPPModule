@@ -44,7 +44,7 @@ int main(int argc, char *argv[]){
 	s.resize(size);
 	in.seekg(0, std::ios::beg);
 	//in.seekg(0, in.beg);
-	in.read(&s[0], size);*/
+	in.read(&s[0], size); -> 실패 시 예외 처리*/
 	ss << in.rdbuf();
 	s = ss.str();
 	//in.close();

@@ -9,7 +9,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& b)
 ShrubberyCreationForm::~ShrubberyCreationForm(){}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string target_name)
-: Form("ShrubberyCreationForm", 145, 137), target(target_name){};
+: Form("ShrubberyCreationForm", 145, 137), target(target_name){}
 
 void ShrubberyCreationForm::execute(const Bureaucrat& b) const{
 	check_execute(b);
