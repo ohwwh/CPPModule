@@ -17,6 +17,6 @@ int main(void){
 
 	std::cout << "\n\n----------------------------------\n\n";
 
-	Cat cat;
-	cat = cat;
+	/*Cat cat;
+	cat = cat;*/
 }

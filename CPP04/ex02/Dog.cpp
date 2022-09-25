@@ -6,14 +6,16 @@ Dog::Dog(){
 	brain = new Brain("dog");
 }
 Dog::Dog(const Dog& a) : Animal(a) {
-	type = a.type;
 	std::cout << "Dog is copied and created" << std::endl;
+	type = a.type;
 	brain = new Brain(*(a.brain));
 }
 Dog& Dog::operator=(const Dog& a){
+	if (&a == this)
+		return (*this);
 	type = a.type;
 	std::cout << "Dog is copied" << std::endl;
-	brain = new Brain(*(a.brain));
+	brain = a.brain;
 	return (*this);
 }
 Dog::~Dog(){

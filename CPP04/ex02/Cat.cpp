@@ -7,12 +7,15 @@ Cat::Cat(){
 }
 Cat::Cat(const Cat& a) : Animal(a) {
 	std::cout << "Cat is copied and created" << std::endl;
+	type = a.type;
 	brain = new Brain(*(a.brain));
 }
 Cat& Cat::operator=(const Cat& a){
+	if (&a == this)
+		return (*this);
 	type = a.type;
 	std::cout << "Cat is copied" << std::endl;
-	brain = new Brain(*(a.brain));
+	brain = a.brain;
 	return (*this);
 }
 Cat::~Cat(){
