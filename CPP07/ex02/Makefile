@@ -14,7 +14,7 @@ CXX=c++
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98
 NAME=casting
 INCS=./
-SRCS=main.cpp Converter.cpp
+SRCS=main.cpp Array.tpp
 OBJS=${SRCS:.cpp=.o}
 
 all : $(NAME)
