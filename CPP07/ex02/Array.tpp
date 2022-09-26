@@ -13,6 +13,8 @@ Array<T>::Array(){
 
 template <typename T>
 Array<T>::Array(const Array& a){
+	_size = 0;
+	data = 0;
 	*this = a;
 }
 
@@ -29,12 +31,11 @@ Array<T>& Array<T>::operator=(const Array& a){
 		data = 0;
 	else {
 		data = new T[_size];
-		std::cout << "ssibal: " << data[0] << std::endl;
 		for (unsigned int i = 0; i < _size; i ++)
 			data[i] = a.data[i];
 	}
 	return (*this);
-} //복사대입연산자 정의시 인자로 들어오는 것이 자기 자신인 경우에 대한 예외처리를 해주어야 한다.
+}
 
 template <typename T>
 Array<T>::~Array(){
@@ -67,10 +68,17 @@ Array<T>::Array(unsigned int n){
 }
 
 template <typename T>
-T& Array<T>::operator[](unsigned int n) const{
-		if (n >= _size || n < 0)
-			throw outOfRange();
-		return (data[n]);
+const T& Array<T>::operator[](unsigned int n) const{
+	if (n >= _size || n < 0)
+		throw outOfRange();
+	return (data[n]);
+}
+
+template <typename T>
+T& Array<T>::operator[](unsigned int n){
+	if (n >= _size || n < 0)
+		throw outOfRange();
+	return (data[n]);
 }
 
 template <typename T>

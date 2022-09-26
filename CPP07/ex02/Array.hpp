@@ -18,9 +18,10 @@ class Array{
 		~Array();
 
 		Array(unsigned int n);
-		T& operator[](unsigned int n) const;
+		const T& operator[](unsigned int n) const;
+		T& operator[](unsigned int n);
 		int size() const;
 };
 
-//#include "Array.tpp"
+#include "Array.tpp"
 #endif

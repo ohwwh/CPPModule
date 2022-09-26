@@ -6,8 +6,10 @@ int main(void){
 
 	iter<int>(arr1, 4, &(::print<int>));
 	iter<const char>(arr2, 4, &(::print<const char>));
-
 	iter<int>(arr1, 4, &(::plus<int>));
 
 	iter(arr1, 4, &(::print));
+	iter<int>(arr1, 4, &(::plus));
+	iter(arr1, 4, &(::print));
+
 }
