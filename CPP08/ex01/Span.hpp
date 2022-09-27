@@ -1,9 +1,9 @@
 #ifndef SPAN_HPP
 #define SPAN_HPP
+#include <vector>
 
 class Span {
-    int *container;
-    unsigned int size;
+    std::vector<int> v;
     public:
         Span();
         Span(const Span& s);
