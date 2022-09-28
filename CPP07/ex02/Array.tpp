@@ -56,14 +56,14 @@ T Array<T>::getDefault(){
 
 template <typename T>
 Array<T>::Array(unsigned int n){
-	T e = getDefault();
+	//T e = getDefault();
 	_size = n;
 	if (!n)
 		data = 0;
 	else {
 		data = new T[n];
-		for (unsigned int i = 0; i < n; i ++)
-			data[i] = e;
+		/*for (unsigned int i = 0; i < n; i ++)
+			data[i] = e;*/
 	}
 }
 
