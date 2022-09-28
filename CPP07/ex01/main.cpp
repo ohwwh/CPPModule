@@ -15,5 +15,4 @@ int main(void){
 	iter<int>(arr1, 4, &(::plus));
 	iter(arr1, 4, &(::print));
 	std::cout << std::endl;
-
 }

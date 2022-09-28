@@ -12,7 +12,7 @@
 
 CXX=c++
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98
-NAME=array
+NAME=mutant
 INCS=./
 SRCS=main.cpp
 OBJS=${SRCS:.cpp=.o}

@@ -61,3 +61,14 @@ int Span::longestSpan(){
 	return (*(std::max_element(v.begin(), v.end())) 
 	- *(std::min_element(v.begin(), v.end())));
 }
+
+void Span::showSpan() {
+	if (!v.size()) {
+		std::cout << "no element!" << std::endl;
+		return ;
+	}
+	std::vector<int>::iterator it = v.begin();
+	while (it != v.end())
+		std::cout << *(it++) << " ";
+	std::cout << std::endl;
+}
