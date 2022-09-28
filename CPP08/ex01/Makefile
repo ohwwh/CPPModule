@@ -12,9 +12,9 @@
 
 CXX=c++
 CPPFLAGS=-Wall -Wextra -Werror -std=c++98
-NAME=array
+NAME=span
 INCS=./
-SRCS=main.cpp
+SRCS=main.cpp Span.cpp
 OBJS=${SRCS:.cpp=.o}
 
 all : $(NAME)
