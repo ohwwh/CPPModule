@@ -2,9 +2,9 @@
 #define MUTANTSTACK_HPP
 #include <stack>
 
-template <typename T>
+template <typename T, typename _container=std::deque<T>>
 class MutantStack {
-    std::stack<T> stack;
+    _container c;
     public:
         MutantStack();
         MutantStack(const MutantStack& m);

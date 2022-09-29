@@ -1,6 +1,7 @@
 #include <iostream>
+#include <stack>
 
 int main(void){
-	int* a = new int();
-	std::cout << *a << std::endl;
+	std::stack<int> s1= std::stack<int>();
+	std::stack<int> s2(s1);
 }
