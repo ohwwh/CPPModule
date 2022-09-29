@@ -55,10 +55,10 @@ int main(int, char**)
 	Array<int> arr(5);
 	arr[3] = 2;
 	arr[0] = 1;
-	/*Array<int>* ptr = &arr;
+	Array<int>* ptr = &arr;
 	*ptr = arr;
 	arr = arr;
-	std::cout << (*ptr)[3] << std::endl;*/
+	std::cout << (*ptr)[3] << std::endl;
     std::cout << arr[4] << std::endl;
 	std::cout << arr[3] << std::endl;
 	arr[3] = 7;
