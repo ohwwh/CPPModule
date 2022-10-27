@@ -18,7 +18,7 @@ class Span {
 				const char* what(void) const throw();
 		};
 
-         class noSpanException : public std::exception {
+        class noSpanException : public std::exception {
 			public:
 				const char* what(void) const throw();
 		};

@@ -6,14 +6,17 @@ Fixed::Fixed(){
 
 Fixed::Fixed(const Fixed& fP){
 	*this = fP;
+	std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int num){
 	raw_bit = num << frac_bit;
+	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float num){
 	raw_bit = (int)roundf(num * (1 << frac_bit));
+	std::cout << "Float constructor called" << std::endl;
 }
 
 
@@ -21,6 +24,7 @@ Fixed::Fixed(const float num){
 Fixed& Fixed::operator=(const Fixed& fP)
 {
 	raw_bit = fP.raw_bit;
+	std::cout << "Copy called" << std::endl;
 	return (*this);
 }
 
@@ -109,6 +113,7 @@ const Fixed& Fixed::max(const Fixed& a, const Fixed& b){
 
 
 Fixed::~Fixed(){
+	std::cout << "Destructor called" << std::endl;
 }
 
 int Fixed::getRawBits(void) const{
