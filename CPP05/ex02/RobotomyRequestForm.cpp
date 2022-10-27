@@ -1,7 +1,7 @@
 #include "RobotomyRequestForm.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm()
- : Form("RobotomyRequestForm", 72, 45), target("target_default"){}
+: Form("RobotomyRequestForm", 72, 45), target("target_default"){}
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& b)
 : Form(b.name, b.grade_sign, b.grade_exec), target(b.target){}
